@@ -1,0 +1,56 @@
+.Header {
+    display: flex;
+    justify-content: flex-start;
+    position: relative;
+    padding: 16px;
+    padding-bottom: 0;
+    font-size: 24px;
+    gap: 16px;
+}
+
+
+.Header>img {
+    height: 75px;
+    margin-right: auto;
+}
+
+@media (max-width: 1025px) {
+    .Header>img {
+        height: 40px;
+    }
+}
+
+
+.hoverable {
+    color: rgba(255, 255, 255, 0.87);
+    text-decoration: none;
+    display: flex;
+    height: 24px;
+}
+
+.total {
+    width: 16px;
+    height: 16px;
+    font-size: 12px;
+    background-color: rgb(105, 107, 107);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 75%;
+    top: -25%;
+}
+
+.cartWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: min-content;
+    position: relative;
+}
+
+.hoverable,
+.cartWrapper {
+    transition: color .5s;
+}

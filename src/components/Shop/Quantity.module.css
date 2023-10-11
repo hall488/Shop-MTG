@@ -1,0 +1,15 @@
+.Quantity {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background-color: #242424;
+    width: min-content;
+    padding: 0 8px;
+    border-radius: 10px;
+}
+
+.Quantity>input {
+    text-align: center;
+    font-size: 20px;
+}

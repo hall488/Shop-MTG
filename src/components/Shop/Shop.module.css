@@ -1,0 +1,86 @@
+.Shop {
+    padding: 32px;
+    display: flex;
+    gap: 16px;
+    height: 100%;
+    overflow-y: hidden;
+}
+
+
+
+
+
+.searchbar {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.setSearch {
+    /* This is actually required because the setSearch is queried by the module classname
+        the classname is never assigned if it is not in the *.module.css file. */
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    gap: 8px;
+    align-items: center;
+    background-color: rgba(4, 4, 4, 0.3);
+    padding: 16px;
+    border-radius: 20px;
+    height: fit-content;
+}
+
+.search,
+.sets,
+.cbTitle {
+    width: 100%;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.87);
+}
+
+.checkboxes {
+    display: flex;
+}
+
+.cbWrapper>img {
+    height: 15px;
+    width: 15px;
+}
+
+.cbWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.cardWrapper {
+
+    width: 100%;
+    background-color: rgba(4, 4, 4, 0.3);
+    border-radius: 20px;
+    padding: 16px;
+    height: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.cardWrapper>div {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    display: grid;
+    justify-content: space-around;
+    gap: 16px;
+    height: 100%;
+    overflow-y: scroll;
+    padding-right: 16px;
+}
+
+@media (max-width: 1025px) {
+    .Shop {
+        flex-wrap: wrap;
+        justify-content: center;
+        overflow-y: scroll;
+    }
+}

@@ -1,0 +1,27 @@
+.wrapper {
+    position: relative;
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    padding: 16px;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    background-color: rgba(4, 4, 4, 0.3);
+    margin: 0;
+    padding: 32px;
+    border-radius: 20px;
+}
+
+.latest {
+    font-size: 20px;
+}
+
+.menu>li {
+    list-style-type: none;
+}
