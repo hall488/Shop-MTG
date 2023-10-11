@@ -23,7 +23,7 @@ function Header({cartTotal, toggleCart, changePage}) {
 
     return (
       <div className={styles.Header}>
-        <img className={styles.logo} src="./src/assets/mtg-logo.png" onClick={() => {clickLink("")}}/>
+        <img className={styles.logo} src="./mtg-logo.png" onClick={() => {clickLink("")}}/>
         <FontAwesomeIcon onClick={() => {clickLink("")}} icon="house" className={styles.hoverable}/>
         <FontAwesomeIcon onClick={() => {clickLink("profile")}} icon="circle-user" className={styles.hoverable}/>
         <div className={styles.cartWrapper} onClick={toggleCart}>

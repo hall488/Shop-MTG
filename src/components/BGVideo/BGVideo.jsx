@@ -14,7 +14,7 @@ function BGVideo({value}) {
     return (
         <div className={styles.BGDiv}>
             <video className={styles.BGVideo} loop autoPlay muted>
-              <source src={`./src/assets/${value}.mp4`} type="video/mp4"></source>
+              <source src={`./${value}.mp4`} type="video/mp4"></source>
             </video>
         </div>
     )

@@ -144,22 +144,22 @@ function Shop() {
                 <div className={styles.cbTitle}>Colors</div>
                 <div className={styles.checkboxes}>
                     <div className={styles.cbWrapper}>
-                        <img src="./src/assets/Color_W.png"/><input type="checkbox" onChange={handleColors} id="W"/>
+                        <img src="./Color_W.png"/><input type="checkbox" onChange={handleColors} id="W"/>
                     </div>
                     <div className={styles.cbWrapper}>
-                        <img src="./src/assets/Color_U.png"/><input type="checkbox" onChange={handleColors} id="U"/>
+                        <img src="./Color_U.png"/><input type="checkbox" onChange={handleColors} id="U"/>
                     </div>
                     <div className={styles.cbWrapper}>
-                        <img src="./src/assets/Color_B.png"/><input type="checkbox" onChange={handleColors} id="B"/>
+                        <img src="./Color_B.png"/><input type="checkbox" onChange={handleColors} id="B"/>
                     </div>
                     <div className={styles.cbWrapper}>
-                        <img src="./src/assets/Color_R.png"/><input type="checkbox" onChange={handleColors} id="R"/>
+                        <img src="./Color_R.png"/><input type="checkbox" onChange={handleColors} id="R"/>
                     </div>
                     <div className={styles.cbWrapper}>
-                        <img src="./src/assets/Color_G.png"/><input type="checkbox" onChange={handleColors} id="G"/>
+                        <img src="./Color_G.png"/><input type="checkbox" onChange={handleColors} id="G"/>
                     </div>
                     <div className={styles.cbWrapper}>
-                        <img src="./src/assets/Color_C.png"/><input type="checkbox" onChange={handleColorless} id="C"/>
+                        <img src="./Color_C.png"/><input type="checkbox" onChange={handleColorless} id="C"/>
                     </div>
                 </div>
                 
