@@ -40,3 +40,15 @@
     width: 50%;
     height: 50px;
 }
+
+@media (max-width: 600px) {
+    .settings>ul {
+        flex-wrap: wrap;
+        overflow-x: auto;
+        justify-content: center;
+    }
+
+    .settings>ul>li>video {
+        height: 50px;
+    }
+}
