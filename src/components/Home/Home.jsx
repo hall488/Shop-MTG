@@ -7,11 +7,13 @@ function Home() {
     const navigate = useNavigate();
 
     const clickLink= (path) => {
-        let prom = handlePage(path);
+        let prom = handlePage(`/Shop-MTG/${path}`);
+
+        console.log(prom);
 
         if(prom) {
             prom.then(() => {
-            navigate(`/${path}`);
+            navigate(`/Shop-MTG/${path}`);
             })
         }
     }

@@ -12,11 +12,11 @@ function Header({cartTotal, toggleCart, changePage}) {
   const navigate = useNavigate();
 
   const clickLink= (path) => {
-    let prom = changePage(path);
+    let prom = changePage(`/Shop-MTG/${path}`);
 
     if(prom) {
       prom.then(() => {
-        navigate(`/${path}`);
+        navigate(`/Shop-MTG/${path}`);
       })
     }
   }

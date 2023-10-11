@@ -7,6 +7,7 @@ import Middle from './components/Middle/Middle';
 import styles from "./components/Middle/Middle.module.css";
 import { Outlet } from "react-router-dom";
 import "./All.css";
+import { useLocation } from 'react-router-dom'
 
 function Root() {
 
@@ -17,6 +18,7 @@ function Root() {
   let [buttonColor, setButtonColor] = useState("#db8c24");
   let [setLink, setSetLink] = useState("");
 
+  let location = useLocation();
 
   useEffect(() => {
     let r = document.querySelector(':root');
@@ -28,7 +30,8 @@ function Root() {
   }
 
   const handlePage = (path) => {
-    if(path != page ) {
+    console.log(location, path);
+    if(location.pathname != path) {
         setPage(path);
         return new Promise( resolve => {
 

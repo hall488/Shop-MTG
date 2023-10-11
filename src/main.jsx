@@ -13,17 +13,17 @@ import Profile from './components/Profile/Profile';
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/Shop-MTG/",
     element: <Root/>,
     errorElement: <ErrorPage />,
     children: [
       {index: true, element: <Home/>},
       {
-        path: "profile",
+        path: "/Shop-MTG/profile",
         element: <Profile/>
       },
       {
-        path: "shop",
+        path: "/Shop-MTG/shop",
         element: <Shop/>
       }
     ]
