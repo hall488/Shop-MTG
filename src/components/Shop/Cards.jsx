@@ -1,7 +1,11 @@
 import Card from "./Card";
 import PropTypes from 'prop-types';
+import { useState } from "react";
+import styles from "./Cards.module.css";
 
 function Cards({loading, cards, scrollTop, cart, setCart}) {
+
+    let [expanded, setExpanded] = useState("");
 
     if(loading) {
         return <>Loading...</>;
@@ -35,6 +39,7 @@ function Cards({loading, cards, scrollTop, cart, setCart}) {
             else if("card_faces" in c)
                 return <Card key={c.id} id={c.id} src={c.card_faces[0].image_uris.normal} price={determinePrice(c)} name={c.name} cart={cart} setCart={setCart}/>
             })}
+
         </div>
     )
 }

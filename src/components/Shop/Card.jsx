@@ -36,9 +36,10 @@ function Card({id, src, price, cart, setCart, name}) {
         }
     }
 
+
     return (
         <div className={styles.Card} key={id}>
-            <img src={src}/>
+            <img src={src} />
             <div className={styles.text}>{price}</div>
             <Quantity disable={price=="No Sale"} quantity={item.quantity} setQuantity={handleQuantity}/>
             <button onClick={handleATC} style={{display: price!="No Sale" ? "flex" : "none"}}>{inCart() ? "In Cart" : "Add to Cart"}</button>
