@@ -18,15 +18,14 @@ function Shop() {
     let colors = useRef({W: false, U: false, B: false, R: false, G: false, C: false});
     let [cards, setCards] = useState([]);
     let [loading, setLoading] = useState(false);
-    let scrollTop = useRef(0);
+    
+    const searchBar = useRef(null);
+    const setSearch = useRef(null);
     const { cart, setCart, setLink, setSetLink } = useOutletContext();
 
     useEffect(() => {
-        let sb = document.querySelector(`.${styles.searchbar} > input`);
-        let ss = document.querySelector(`.${styles.setSearch}`);
-
         function handlePress(e) {
-            if(e.key == "Enter" && (sb === document.activeElement || ss === document.activeElement) && !e.repeat) {
+            if(e.key == "Enter" && (searchBar === document.activeElement || setSearch === document.activeElement) && !e.repeat) {
                 handleSearch();
             }
         }
@@ -54,12 +53,7 @@ function Shop() {
             
     }, [activeSet, sets]);
 
-    useEffect(() => {
-        let el = document.querySelector(".scroller");
-        if(el != null) {
-            el.scrollTop = scrollTop.current;
-        }
-    });
+    
 
     useEffect(() => {
         requestSetNames().then(response => {
@@ -131,11 +125,11 @@ function Shop() {
             <div className={styles.sidebar}>
                 <div className={styles.search}>Search</div>
                 <div className={styles.searchbar}>
-                    <input id="search" onChange={handleSearchChange} placeholder="Search"></input>
+                    <input ref={searchBar} id="search" onChange={handleSearchChange} placeholder="Search"></input>
                     <FontAwesomeIcon onClick={handleSearch} icon="search" />
                 </div>
                 <div className={styles.sets}>Sets</div>
-                <input name="setSearch" className={styles.setSearch} value={activeSet} placeholder="Choose a set" onChange={handleSetChange} list="sets"/>
+                <input ref={setSearch} name="setSearch" className={styles.setSearch} value={activeSet} placeholder="Choose a set" onChange={handleSetChange} list="sets"/>
                 <datalist id="sets">
                     {sets.map(s => {
                         return <option value={s.code} key={s.code}>{s.name}</option>
@@ -166,7 +160,7 @@ function Shop() {
                 <button onClick={handleSearch}>Apply Filters</button>
             </div>
             <div className={styles.cardWrapper}>
-                    <Cards loading={loading} cards={cards} scrollTop={scrollTop} cart={cart} setCart={setCart}/>
+                    <Cards loading={loading} cards={cards} cart={cart} setCart={setCart}/>
             </div>
         </div>
     )

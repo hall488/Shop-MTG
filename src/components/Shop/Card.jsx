@@ -1,10 +1,10 @@
 import Quantity from "./Quantity";
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, memo } from "react";
 import styles from "./Card.module.css";
 import PropTypes from 'prop-types';
 import VanillaTilt from "vanilla-tilt";
 
-function Card({id, src, price, cart, setCart, name}) {
+const Card = memo(function Card({id, src, price, cart, setCart, name}) {
 
     let [item, setItem] = useState({name, quantity: 0, price});
     
@@ -60,7 +60,7 @@ function Card({id, src, price, cart, setCart, name}) {
             <button onClick={handleATC} style={{display: price!="No Sale" ? "flex" : "none"}}>{inCart() ? "In Cart" : "Add to Cart"}</button>
         </div>
     )
-}
+});
 
 Card.propTypes = {
     options: PropTypes.any,

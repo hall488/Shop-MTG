@@ -1,7 +1,17 @@
 import Card from "./Card";
 import PropTypes from 'prop-types';
+import { useEffect, useRef } from "react";
 
-function Cards({loading, cards, scrollTop, cart, setCart}) {
+function Cards({loading, cards, cart, setCart}) {
+
+    let scrollTop = useRef(0);
+    let scroller = useRef(null);
+
+    useEffect(() => {
+        if(scroller != null) {
+            scroller.scrollTop = scrollTop.current;
+        }
+    });
 
 
     if(loading) {
@@ -29,7 +39,7 @@ function Cards({loading, cards, scrollTop, cart, setCart}) {
     }
 
     return (
-        <div className="scroller" onScroll={handleScroll}>
+        <div ref={scroller} onScroll={handleScroll}>
             {cards.map(c => {
             if("image_uris" in c)
                 return <Card key={c.id} id={c.id} src={c.image_uris.normal} price={determinePrice(c)} name={c.name} cart={cart} setCart={setCart}/>
