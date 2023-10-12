@@ -9,7 +9,11 @@
     font-size: 18px;
 }
 
-.Card>img {
+.imgW {
     width: 100%;
+}
+
+.imgW>img {
     border-radius: 15px;
+    width: 100%;
 }

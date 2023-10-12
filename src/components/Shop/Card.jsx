@@ -1,7 +1,8 @@
 import Quantity from "./Quantity";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import styles from "./Card.module.css";
 import PropTypes from 'prop-types';
+import VanillaTilt from "vanilla-tilt";
 
 function Card({id, src, price, cart, setCart, name}) {
 
@@ -16,6 +17,7 @@ function Card({id, src, price, cart, setCart, name}) {
         if(inCart()) {
             setItem({...item, quantity: cart.find(c => c.name == name).quantity});
         }
+        
     }, []);
 
     const handleATC = () => {
@@ -36,10 +38,23 @@ function Card({id, src, price, cart, setCart, name}) {
         }
     }
 
+    function Tilt(props) {
+        const { options, ...rest } = props;
+        const tilt = useRef(null);
+      
+        useEffect(() => {
+          VanillaTilt.init(tilt.current, options);
+        }, [options]);
+      
+        return <div ref={tilt} {...rest} />;
+    }
+
 
     return (
         <div className={styles.Card} key={id}>
-            <img src={src} />
+            <Tilt className={styles.imgW} options={{scale: 1.1}}>
+                <img src={src}/>
+            </Tilt>
             <div className={styles.text}>{price}</div>
             <Quantity disable={price=="No Sale"} quantity={item.quantity} setQuantity={handleQuantity}/>
             <button onClick={handleATC} style={{display: price!="No Sale" ? "flex" : "none"}}>{inCart() ? "In Cart" : "Add to Cart"}</button>
@@ -48,6 +63,7 @@ function Card({id, src, price, cart, setCart, name}) {
 }
 
 Card.propTypes = {
+    options: PropTypes.any,
     id: PropTypes.string,
     src: PropTypes.string,
     price: PropTypes.string,

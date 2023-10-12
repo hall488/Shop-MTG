@@ -1,11 +1,8 @@
 import Card from "./Card";
 import PropTypes from 'prop-types';
-import { useState } from "react";
-import styles from "./Cards.module.css";
 
 function Cards({loading, cards, scrollTop, cart, setCart}) {
 
-    let [expanded, setExpanded] = useState("");
 
     if(loading) {
         return <>Loading...</>;
